@@ -4,6 +4,10 @@ let express = require('express');
 let bodyParser = require('body-parser');
 // Import Mongoose
 let mongoose = require('mongoose');
+//use .env file
+require('dotenv').config();
+//import connection String
+let cs = require('./')
 // Initialise the app
 let app = express();
 
@@ -16,7 +20,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb+srv://gustavo:WRJmauFPlaX5vNtC@cluster0.qd4by.mongodb.net/Cluster0?retryWrites=true&w=majority', { useNewUrlParser: true});
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
