@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "An API with JSON to save in a Mongo Database",
   "main": "index.js",
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
